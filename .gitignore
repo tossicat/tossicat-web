@@ -18,3 +18,6 @@ Cargo.lock
 # for mac 
 *.DS_Store
 .DS_Store
+
+# web testing files
+test_web/node_modules
