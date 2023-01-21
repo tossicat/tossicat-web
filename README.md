@@ -19,7 +19,7 @@ function fix_sentence(
 아래와 같이 사용하시면 됩니다.
 
 ```js
-fix_sentence("{철수, 은} {영희,   과} {밥,  를} 먹습니다.") // 겔과: "철수는 영희처럼 밥을 먹습니다."
+fix_sentence("{철수, 은} {영희,   과} {밥,  를} 먹습니다.") // 결과: "철수는 영희처럼 밥을 먹습니다."
 ```
 
 앞에서처럼 문장을 다루는 것이 아니라 단순하게 특정 단어에 특정 토시를 붙일 때 어떻게 변환해야 하는 것인지를 알고 싶은 경우도 있습니다. 이런 경우에 사용할 함수는 `fix()`입니다.
@@ -36,7 +36,7 @@ function fix(
 아래와 같이 사용하시면 됩니다.
 
 ```js
-fix("밥","을") // 겔과: "밥을" 
+fix("밥","을") // 결과: "밥을" 
 fix("철수", "은") // 결과: "철수는"
 ```
 
@@ -60,12 +60,30 @@ fix("철수", "은") // 결과: "철수는"
 ```js
 const js = import("./node_modules/@dialektike/tossicat/tossicat.js");
     js.then(js => {
-      temp_1 = js.fix("철수","가");
-      temp_2 = js.fix_sentence("{철수, 은} {영희, 처럼} {밥,  를} 먹습니다.");
-      temp = temp_1 + temp_2;
-      alert(temp);
+        temp_1 = js.fix("철수","가");
+        temp_2 = js.fix_sentence("{철수, 은} {영희, 처럼} {밥,  를} 먹습니다.");
+        temp = temp_1 + temp_2;
+        alert(temp);
     });
 ```
+
+외국어로 병기된 단어가 숫자가 포함된 단어가 입력되더라고 마지막 글자만 한글이거나 숫자이면 적절하게 처리할 수 있습니다. 만약 입력된 단어의 글자수가 많거나 변환할 수 없는 토시가 입력되면 에러가 발생하게 됩니다. 그리고 문장을 변환하고자 하는 경우에도 몇 가지 에러가 발생할 수 있습니다. 에러를 처리하기 위해서는 아래와 같이 하시면 됩니다.
+
+```js
+const js = import("./node_modules/@dialektike/tossicat/tossicat.js");
+    js.then(js => {
+        try {
+            const result = js.fix("철수", "apple");
+            alert(result);
+        } catch (err) {
+            console.error(err);
+        }
+    });
+```
+
+에러 메세지에 관한 것은 아래 링크를 참고해주세요.
+
+- [tossicat-core-error.rs](https://github.com/tossicat/tossicat-core/blob/main/src/error.rs)
 
 이 리포지토리에 있는 [test_web 폴더](https://github.com/tossicat/tossicat-web/tree/main/test_web)를 보시면 더 자세히 알 수 있습니다. 이 부분은 [Rust를 WebAssembly로 컴파일하기 - 웹어셈블리 | MDN](https://developer.mozilla.org/ko/docs/WebAssembly/Rust_to_wasm)을 참고했습니다.
 

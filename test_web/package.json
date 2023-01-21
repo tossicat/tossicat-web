@@ -3,7 +3,7 @@
       "serve": "webpack-dev-server"
     },
     "dependencies": {
-      "@dialektike/tossicat": "^0.5.0"
+      "@dialektike/tossicat": "^0.6.0"
     },
     "devDependencies": {
       "webpack": "^4.25.1",
