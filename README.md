@@ -51,7 +51,7 @@ fix("철수", "은") // 결과: "철수는"
 
 ```json
 "dependencies": {
-      "@dialektike/tossicat": "^0.5.0"
+      "@dialektike/tossicat": "^0.6.0"
     },
 ```
 
