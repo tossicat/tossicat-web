@@ -1,10 +1,22 @@
 [package]
-name = "tossicat-web"
-version = "0.1.0"
+name = "tossicat" # 
+version = "0.6.0"
 edition = "2021"
+authors = ["Jae-Hwan Chung <dialektike@gmail.com>"]
+description = "입력된 단어에 맞게 같이 입력된 토시(조사)를 적절하게 변환하는 라이브러리"
+license = "LGPL-2.1"
+keywords = ["hangul", "hangeul", "library", "lib"]
+categories = ["development-tools", "text-processing"]
+exclude = ["/docs"] #crates.io에 업로드할 때 제외할 파일
+repository = "https://github.com/tossicat/tossicat-web"
+documentation = "https://docs.rs/tossicat-web"
+homepage = "https://github.com/tossicat/tossicat-web/blob/master/README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
 wasm-bindgen = "0.2"
-tossicat = "0.3"
+tossicat = "0.4"
