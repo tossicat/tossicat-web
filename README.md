@@ -47,7 +47,7 @@ fix("철수", "은") // 결과: "철수는"
 
 이 둘을 합쳐서 총 77개의 토시를 처리할 수 있습니다. 여기에 외국어 단어가 입력되었을 경우 그 단어의 발음을 정확하게 알 수 없기 때문에, "(을)를"과 같이 토시를 병기해 변환하는 경우가 일어날 수 있기 때문에 내부적으로 처리할 수 있는 토시 숫자는 훨씬 많습니다. 이와 관련된 자세한 내용은 [RELEASES.md](https://github.com/tossicat/tossicat-core/blob/main/RELEASES.md)를 참고하세요.
 
-이 리포지토리는 Rust로 작성한 [tossicat](https://crates.io/crates/tossicat)을 자바스크립트에서 사용하기 위해 러스트의 wasm-pack을 사용하여 컴파일해 WebAssembly로 변환하고 하는 것을 목표로 하고 있습니다. 현재 이 리포지토리(Repository)를 컴파일해서 [npm]에서 [tossicat](https://www.npmjs.com/package/@dialektike/tossicat)이라는 이름이라는 패키지로 배포하고 있습니다. 만약 webpack을 사용하신다면 `package.json`에 "dependencies"에 다음과 같이 패키지를 추가하시면 됩니다.
+이 리포지토리는 Rust로 작성한 [tossicat](https://crates.io/crates/tossicat)을 자바스크립트에서 사용하기 위해 러스트의 wasm-pack을 사용하여 컴파일해 WebAssembly로 변환하고 하는 것을 목표로 하고 있습니다. 현재 이 리포지토리(Repository)를 컴파일해서 [npm](https://www.npmjs.com)에서 [tossicat](https://www.npmjs.com/package/@dialektike/tossicat)이라는 이름이라는 패키지로 배포하고 있습니다. 만약 webpack을 사용하신다면 `package.json`에 "dependencies"에 다음과 같이 패키지를 추가하시면 됩니다.
 
 ```json
 "dependencies": {
@@ -67,7 +67,7 @@ const js = import("./node_modules/@dialektike/tossicat/tossicat.js");
     });
 ```
 
-이 리포지토리에 있는 test_web 폴더를 보시면 더 자세히 알 수 있습니다. 이 부분은 [Rust를 WebAssembly로 컴파일하기 - 웹어셈블리 | MDN](https://developer.mozilla.org/ko/docs/WebAssembly/Rust_to_wasm)을 참고했습니다.
+이 리포지토리에 있는 [test_web 폴더](https://github.com/tossicat/tossicat-web/tree/main/test_web)를 보시면 더 자세히 알 수 있습니다. 이 부분은 [Rust를 WebAssembly로 컴파일하기 - 웹어셈블리 | MDN](https://developer.mozilla.org/ko/docs/WebAssembly/Rust_to_wasm)을 참고했습니다.
 
 ## wasm-pack을 사용하여 컴파일하기
 
