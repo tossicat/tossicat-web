@@ -1,13 +1,13 @@
 {
     "scripts": {
-      "serve": "webpack-dev-server"
+        "serve": "webpack-dev-server"
     },
     "dependencies": {
-      "@dialektike/tossicat": "^0.6.0"
+        "@dialektike/tossicat": "^0.6.0"
     },
     "devDependencies": {
-      "webpack": "^4.25.1",
-      "webpack-cli": "^3.1.2",
-      "webpack-dev-server": "^3.1.10"
+        "webpack": "^4.25.1",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.1.10"
     }
-  }
+}

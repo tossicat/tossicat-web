@@ -1,14 +1,28 @@
-const js = import("./node_modules/@dialektike/tossicat/tossicat.js");
-    js.then(js => {
-        temp_1 = js.fix("철수","가");
-        temp_2 = js.fix_sentence("{철수, 은} {영희, 처럼} {밥,  를} 먹습니다.");
-        temp = temp_1 + temp_2;
-        alert(temp);
+const tc = import("./node_modules/@dialektike/tossicat/tossicat.js");
+  tc.then(tc => {
 
+    const fix_button = document.getElementById("fixbutton");
+    fix_button.addEventListener("click", event => {
         try {
-            const result = js.fix("철수", "apple");
-            alert(result);
+            wordinput = document.getElementById("wordinput").value;
+            tossinput = document.getElementById("tossiinput").value;
+            result = tc.fix(wordinput,tossinput);
+            document.getElementById("fixresult").innerHTML = result;
         } catch (err) {
-            console.error(err);
+            document.getElementById("fixresult").innerHTML = err;
         }
-    });
+      });
+
+    const sentence_button = document.getElementById("sentencebutton");
+    sentence_button.addEventListener("click", event => {
+          try {
+              sentenceinput = document.getElementById("sentenceinput").value;
+              console.log(sentenceinput);
+              result = tc.fix_sentence(sentenceinput);
+              document.getElementById("sentenceresult").innerHTML = result;
+          } catch (err) {
+              document.getElementById("sentenceresult").innerHTML = err;
+          }
+        });
+  })
+  .catch(console.error);
