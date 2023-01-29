@@ -1,6 +1,5 @@
-const tc = import("./node_modules/@dialektike/tossicat/tossicat.js");
-  tc.then(tc => {
-
+import("@dialektike/tossicat/tossicat")
+  .then(tc => {
     const fix_button = document.getElementById("fixbutton");
     fix_button.addEventListener("click", event => {
         try {
