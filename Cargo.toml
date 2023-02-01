@@ -1,6 +1,6 @@
 [package]
 name = "tossicat" # 
-version = "0.6.1"
+version = "0.7.0"
 edition = "2021"
 authors = ["Jae-Hwan Chung <dialektike@gmail.com>"]
 description = "입력된 단어에 맞게 같이 입력된 토시(조사)를 적절하게 변환하는 라이브러리"
@@ -19,4 +19,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 wasm-bindgen = "0.2"
-tossicat = "0.4"
+tossicat = "0.4.7"
